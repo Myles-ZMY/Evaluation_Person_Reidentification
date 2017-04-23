@@ -1,16 +1,9 @@
 close all; clear; clc;
 addpath ./lib
 
-Varin =  importdata('/Users/Roll/Riceroll/CNN/prp/LOMO_XQDA/code/feature.mat');
+Varin =  importdata('./data/feature.mat');
 feat_test = Varin.feat;
 feat_p_test = Varin.feat_p;
-
-% for i=1:150
-%     for j=1:150
-%         dist_mat(i,j)=norm((feat_test(i,:)-feat_p_test(j,:)),2);
-%     end
-% end
-% cms = EvalCMC( -dist_mat, 1:150, 1:150, 50 );
 
 sizeFeat = size(feat_test);
 numClass = sizeFeat(1);
