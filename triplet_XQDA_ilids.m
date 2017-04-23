@@ -4,11 +4,11 @@ addpath ./lib
 Varin =  importdata('./data/feature.mat');
 feat_test = Varin.feat;
 feat_p_test = Varin.feat_p;
-
 sizeFeat = size(feat_test);
 numClass = sizeFeat(1);
 numFolds = 10;
 numRanks = floor(numClass/2);
+
 cms = zeros(numFolds, numRanks);
 for nf = 1 : numFolds
     p = randperm(numClass);
