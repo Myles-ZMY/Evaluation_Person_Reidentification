@@ -1,14 +1,17 @@
 close all; clear; clc;
 addpath ./lib
-
+% Parameters =========================================
 Varin =  importdata('./data/feature.mat');
+numFolds = 10;
+
+% Variables ==========================================
 feat_test = Varin.feat;
 feat_p_test = Varin.feat_p;
 sizeFeat = size(feat_test);
 numClass = sizeFeat(1);
-numFolds = 10;
 numRanks = floor(numClass/2);
 
+% Calculate the distance with XQDA & calculate the CMC curve
 cms = zeros(numFolds, numRanks);
 for nf = 1 : numFolds
     p = randperm(numClass);
